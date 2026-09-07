@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: gen-link-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python combined_app.py
+    envVars:
+      - key: DATA_FILE
+        value: bot_data.json
+      - key: PUBLIC_BASE_URL
+        sync: false
